@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { FloatingDock } from "@/components/ui/floating-dock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+
+        {/* Floating Dock Wrapper */}
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+          <FloatingDock />
+        </div>
       </body>
     </html>
   );
