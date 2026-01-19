@@ -14,32 +14,20 @@ export const NavigationItems = [
     icon: (
       <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "/",
   },
 
   {
-    title: "Products",
+    title: "Projects",
     icon: (
       <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "/projects",
   },
   {
     title: "Components",
     icon: (
       <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-  {
-    title: "Aceternity UI",
-    icon: (
-      <img
-        src="https://assets.aceternity.com/logo-dark.png"
-        width={20}
-        height={20}
-        alt="Aceternity Logo"
-      />
     ),
     href: "#",
   },
@@ -63,6 +51,6 @@ export const NavigationItems = [
     icon: (
       <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "https://github.com/pranavgaikwadcodes",
   },
 ];

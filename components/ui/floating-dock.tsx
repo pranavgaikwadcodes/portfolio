@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
@@ -9,21 +10,21 @@ import {
   useTransform,
 } from "motion/react";
 
+import { NavigationItems } from "@/utils/navigation-items";
 import { useRef, useState } from "react";
 
 export const FloatingDock = ({
-  items,
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
+  let items = NavigationItems;
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      <FloatingDockDesktop items={NavigationItems} className={desktopClassName} />
+      <FloatingDockMobile items={NavigationItems} className={mobileClassName} />
     </>
   );
 };
