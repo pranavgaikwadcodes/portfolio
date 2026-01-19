@@ -20,7 +20,6 @@ export const FloatingDock = ({
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
-  let items = NavigationItems;
   return (
     <>
       <FloatingDockDesktop items={NavigationItems} className={desktopClassName} />
