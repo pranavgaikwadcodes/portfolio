@@ -1,4 +1,5 @@
 import HeroSection from "@/components/hero/hero";
+import ProjectsSection from "@/components/projects/projects";
 import TimelineSection from "@/components/timeline/timeline";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div>
       <HeroSection />
       <TimelineSection />
+      <ProjectsSection />
     </div>
   </>;
 }
