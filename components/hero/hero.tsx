@@ -2,6 +2,8 @@
 
 import { FlipWords } from "../ui/flip-words";
 import Image from 'next/image';
+import { ProjectsItems } from "@/utils/projects-items";
+import Link from "next/link";
 
 let words = ["build", "ship", "scale"];
 
@@ -20,7 +22,7 @@ const techStack = [
 
 export default function HeroSection() {
     return (
-        <div className="h-screen flex items-center justify-between px-4 md:px-0">
+        <div id="home" className="h-screen flex items-center justify-between px-4 md:px-0">
             <div className="h-full flex flex-col items-start justify-center space-y-8 max-w-3xl">
                 {/* Main Content */}
                 <div className="space-y-6">
@@ -34,10 +36,13 @@ export default function HeroSection() {
                         </div>
 
                         {/* Professional Title */}
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 flex-wrap">
                             <div className="h-px w-12 bg-indigo-500"></div>
                             <span className="text-lg md:text-xl font-semibold text-neutral-700 dark:text-neutral-300">
                                 Full Stack Software Engineer
+                            </span>
+                            <span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 rounded-full text-sm font-geist-mono border border-indigo-100 dark:border-indigo-900/30">
+                                1+ years exp
                             </span>
                         </div>
 
@@ -103,11 +108,14 @@ export default function HeroSection() {
                             Let's Connect
                         </button>
                     </a>
-                    <a href="#projects">
-                        <button className="px-6 py-3 border-2 border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg font-bold font-geist hover:border-indigo-500 dark:hover:border-indigo-500 transition duration-400">
-                            View Projects
+                    <Link href="/projects">
+                        <button className="relative px-6 py-3 border-2 border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg font-bold font-geist hover:border-indigo-500 dark:hover:border-indigo-500 transition duration-400">
+                            View All Projects
+                            <span className="absolute -top-2 -right-2 w-6 h-6 bg-indigo-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                                {ProjectsItems.length}
+                            </span>
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
