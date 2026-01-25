@@ -10,20 +10,21 @@ import {
   useTransform,
 } from "motion/react";
 
-import { NavigationItems } from "@/utils/navigation-items";
 import { useRef, useState } from "react";
 
 export const FloatingDock = ({
+  items,
   desktopClassName,
   mobileClassName,
 }: {
+  items: { title: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
   return (
     <>
-      <FloatingDockDesktop items={NavigationItems} className={desktopClassName} />
-      <FloatingDockMobile items={NavigationItems} className={mobileClassName} />
+      <FloatingDockDesktop items={items} className={desktopClassName} />
+      <FloatingDockMobile items={items} className={mobileClassName} />
     </>
   );
 };
