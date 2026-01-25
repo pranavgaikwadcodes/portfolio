@@ -32,11 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${luckiestGuy.variable} antialiased container mx-auto px-4`}
+        className={`${geistSans.variable} ${geistMono.variable} ${luckiestGuy.variable} antialiased`}
       >
         {children}
 
-        {/* Floating Dock Wrapper */}
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
           <FloatingDock />
         </div>

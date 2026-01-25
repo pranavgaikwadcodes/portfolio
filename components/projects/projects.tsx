@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 
 export default function ProjectsSection() {
     return (
-        <div className="relative w-full py-20">
+        <div id="projects" className="relative w-full py-20">
             <div className="max-w-7xl mx-auto px-4 md:px-10">
                 {/* Section Header */}
                 <div className="space-y-4 mb-16">

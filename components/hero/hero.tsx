@@ -98,12 +98,16 @@ export default function HeroSection() {
 
                 {/* CTA Buttons */}
                 <div className="flex gap-4 pt-2">
-                    <button className="px-6 py-3 bg-indigo-500 text-white rounded-lg font-bold font-geist transform hover:-translate-y-1 transition duration-400 hover:shadow-xl">
-                        Let's Connect
-                    </button>
-                    <button className="px-6 py-3 border-2 border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg font-bold font-geist hover:border-indigo-500 dark:hover:border-indigo-500 transition duration-400">
-                        View Projects
-                    </button>
+                    <a href="#contact">
+                        <button className="px-6 py-3 bg-indigo-500 text-white rounded-lg font-bold font-geist transform hover:-translate-y-1 transition duration-400 hover:shadow-xl">
+                            Let's Connect
+                        </button>
+                    </a>
+                    <a href="#projects">
+                        <button className="px-6 py-3 border-2 border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg font-bold font-geist hover:border-indigo-500 dark:hover:border-indigo-500 transition duration-400">
+                            View Projects
+                        </button>
+                    </a>
                 </div>
             </div>
 
