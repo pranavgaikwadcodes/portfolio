@@ -1,5 +1,8 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
+import { useState } from "react";
 
 export const BentoGrid = ({
   className,
@@ -30,6 +33,7 @@ export const BentoGridItem = ({
   status,
   github,
   liveUrl,
+  onClick,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -40,11 +44,13 @@ export const BentoGridItem = ({
   status?: string;
   github?: string;
   liveUrl?: string;
+  onClick?: () => void;
 }) => {
   return (
     <div
+      onClick={onClick}
       className={cn(
-        "group/bento row-span-1 flex flex-col justify-between rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900 transition-all duration-300 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-xl overflow-hidden",
+        "group/bento row-span-1 flex flex-col justify-between rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900 transition-all duration-300 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-xl overflow-hidden cursor-pointer",
         className,
       )}
     >
@@ -128,12 +134,11 @@ export const BentoGridItem = ({
               </a>
             )}
           </div>
-        )
-        }
-      </div >
+        )}
+      </div>
 
       {/* Hover Indicator */}
-      < div className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 transform scale-x-0 group-hover/bento:scale-x-100 transition-transform duration-300 origin-left" ></div >
-    </div >
+      <div className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500 transform scale-x-0 group-hover/bento:scale-x-100 transition-transform duration-300 origin-left"></div>
+    </div>
   );
 };

@@ -1,90 +1,256 @@
-import {
-    IconRocket,
-    IconBrain,
-    IconDeviceDesktop,
-    IconAppWindow,
-    IconChartBar,
-    IconCode,
-    IconBrandReact,
-} from "@tabler/icons-react";
-import Image from "next/image";
+import { IconCode, IconRocket, IconDatabase } from "@tabler/icons-react";
 
-// Enhanced Skeleton with gradient matching your style
-const Skeleton = ({ image }: { image?: string }) => (
-    <div className="flex flex-1 w-full h-full min-h-[12rem] rounded-xl overflow-hidden">
-        {image ? (
-            <Image
-                src={image}
-                alt="Project preview"
-                fill
-                className="object-cover"
-            />
-        ) : (
-            <div className="w-full h-full bg-gradient-to-br from-neutral-100 via-neutral-50 to-indigo-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-indigo-950 flex items-center justify-center">
-                <div className="text-neutral-300 dark:text-neutral-700">
-                    <IconCode className="w-16 h-16" />
-                </div>
-            </div>
-        )}
-    </div>
-);
+export interface ProjectItem {
+    title: string;
+    description: string;
+    longDescription: string;
+    header: React.ReactNode;
+    icon: React.ReactNode;
+    tech: string[];
+    status?: string;
+    github?: string;
+    liveUrl?: string;
+    image: string;
+    features?: string[];
+    challenges?: string[];
+    timeline?: string;
+    team?: string;
+}
 
-export const ProjectsItems = [
+export const ProjectsItems: ProjectItem[] = [
     {
-        title: "Time Supervisor Desktop",
-        description: "Cross-platform activity tracking application built with Rust + Tauri. Features real-time monitoring, screen recording, and seamless cloud sync.",
-        header: <Skeleton />,
-        icon: <IconDeviceDesktop className="h-4 w-4 text-indigo-500" />,
-        tech: ["Rust", "Tauri", "React", "TypeScript"],
+        title: "TimeSupervisor",
+        description: "Comprehensive time tracking system with desktop and web components",
+        longDescription: `A full-stack time tracking application designed for enterprises to monitor employee productivity and manage schedules effectively.
+
+Built with modern technologies including React, Node.js, and Rust-based desktop application. Features real-time activity monitoring, screenshot capture, and detailed analytics dashboards.
+
+The system handles complex role-based access control, timezone management, and provides comprehensive audit logging for compliance purposes.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-indigo-500 to-purple-600" />
+        ),
+        icon: <IconCode className="h-6 w-6 text-indigo-500" />,
+        tech: ["React", "Node.js", "Prisma", "PostgreSQL", "Rust", "Tauri", "AWS ECS"],
         status: "In Production",
-        github: "https://github.com/yourusername/timesupervisor-desktop",
-        liveUrl: "https://timesupervisor.com/download",
+        github: "https://github.com/yourusername/timesupervisor",
+        liveUrl: "https://timesupervisor.com",
+        image: "/images/projects/timesupervisor.png",
+        features: [
+            "Real-time employee activity tracking with screenshot capture",
+            "Schedule management with drag-and-drop interface",
+            "Role-based access control for multi-level organizations",
+            "Cross-platform desktop app (Windows, Mac, Linux)",
+            "Advanced analytics and reporting dashboards",
+            "Timezone-aware data handling",
+            "Comprehensive audit logging for compliance"
+        ],
+        challenges: [
+            "Implemented timezone handling to fix IST timestamp conversion issues where backend stored local time with UTC markers",
+            "Resolved authentication issues with refresh token functionality by correcting cookie settings in test environments",
+            "Optimized Rust screen recording with custom MP4 writer and frame pooling for memory efficiency",
+            "Built file-based sync system transitioning from database to NDJSON files for desktop-to-API data upload"
+        ],
+        timeline: "Jan 2024 - Present",
+        team: "Solo Developer"
     },
     {
-        title: "Virtual Intern Platform",
-        description: "Full-stack skill development platform with interactive dashboards, automated assessments, and certificate generation.",
-        header: <Skeleton />,
-        icon: <IconAppWindow className="h-4 w-4 text-indigo-500" />,
-        tech: ["React", "Node.js", "MongoDB", "Razorpay"],
-        status: "Startup Project",
-        github: "https://github.com/yourusername/virtual-intern",
-        liveUrl: "https://virtualintern.example.com",
-    },
-    {
-        title: "AI Research Assistant",
-        description: "Agentic AI system that autonomously researches topics, synthesizes information, and generates comprehensive reports.",
-        header: <Skeleton />,
-        icon: <IconBrain className="h-4 w-4 text-indigo-500" />,
-        tech: ["Python", "LangGraph", "OpenAI", "Next.js"],
-        status: "Experimental",
-        github: "https://github.com/yourusername/ai-research-assistant",
-        // No liveUrl for experimental projects
-    },
-    {
-        title: "Central Assessment Program",
-        description: "MERN-based online examination platform with secure authentication and real-time monitoring. Reduced manual assessment overhead by 50%.",
-        header: <Skeleton />,
-        icon: <IconChartBar className="h-4 w-4 text-indigo-500" />,
-        tech: ["React", "Node.js", "MongoDB", "Express"],
-        status: "Completed",
-        link: "#",
-    },
-    {
-        title: "EV Station Finder",
-        description: "Flutter mobile app for locating EV charging stations with live availability tracking, booking management, and payment processing.",
-        header: <Skeleton />,
-        icon: <IconRocket className="h-4 w-4 text-indigo-500" />,
-        tech: ["Flutter", "Firebase", "Google Maps API"],
-        status: "Freelance",
-        link: "#",
-    },
-    {
-        title: "Real-Time Analytics Dashboard",
-        description: "Performance monitoring dashboard with interactive visualizations, role-based access control, and automated reporting for business intelligence.",
-        header: <Skeleton />,
-        icon: <IconBrandReact className="h-4 w-4 text-indigo-500" />,
-        tech: ["React", "PostgreSQL", "TimescaleDB", "Node.js"],
+        title: "E-Commerce Platform",
+        description: "Modern e-commerce solution with real-time inventory",
+        longDescription: `A scalable e-commerce platform featuring real-time inventory management, payment integration, and advanced search capabilities.
+
+Implemented with Next.js for optimal performance and SEO, integrated with Stripe for secure payments, and utilizes Redis for caching.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-blue-500 to-cyan-600" />
+        ),
+        icon: <IconRocket className="h-6 w-6 text-blue-500" />,
+        tech: ["Next.js", "TypeScript", "Stripe", "Redis", "MongoDB"],
         status: "Active Development",
-        link: "#",
+        github: "https://github.com/yourusername/ecommerce",
+        image: "/images/projects/ecommerce.png",
+        features: [
+            "Real-time inventory tracking",
+            "Stripe payment integration",
+            "Advanced product search and filtering",
+            "Admin dashboard with analytics",
+            "Order management system"
+        ],
+        timeline: "3 months",
+        team: "2 Developers"
     },
+    {
+        title: "Analytics Dashboard",
+        description: "Real-time data visualization platform",
+        longDescription: `A comprehensive analytics dashboard for visualizing complex datasets with interactive charts and real-time updates.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-green-500 to-emerald-600" />
+        ),
+        icon: <IconDatabase className="h-6 w-6 text-green-500" />,
+        tech: ["React", "D3.js", "WebSocket", "PostgreSQL"],
+        status: "Completed",
+        liveUrl: "https://analytics-demo.com",
+        image: "/images/projects/analytics.png",
+        features: [
+            "Real-time data updates via WebSocket",
+            "Interactive charts with D3.js",
+            "Custom date range filtering",
+            "Export to CSV/PDF"
+        ],
+        timeline: "2 months"
+    },{
+        title: "TimeSupervisor",
+        description: "Comprehensive time tracking system with desktop and web components",
+        longDescription: `A full-stack time tracking application designed for enterprises to monitor employee productivity and manage schedules effectively.
+
+Built with modern technologies including React, Node.js, and Rust-based desktop application. Features real-time activity monitoring, screenshot capture, and detailed analytics dashboards.
+
+The system handles complex role-based access control, timezone management, and provides comprehensive audit logging for compliance purposes.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-indigo-500 to-purple-600" />
+        ),
+        icon: <IconCode className="h-6 w-6 text-indigo-500" />,
+        tech: ["React", "Node.js", "Prisma", "PostgreSQL", "Rust", "Tauri", "AWS ECS"],
+        status: "In Production",
+        github: "https://github.com/yourusername/timesupervisor",
+        liveUrl: "https://timesupervisor.com",
+        image: "/images/projects/timesupervisor.png",
+        features: [
+            "Real-time employee activity tracking with screenshot capture",
+            "Schedule management with drag-and-drop interface",
+            "Role-based access control for multi-level organizations",
+            "Cross-platform desktop app (Windows, Mac, Linux)",
+            "Advanced analytics and reporting dashboards",
+            "Timezone-aware data handling",
+            "Comprehensive audit logging for compliance"
+        ],
+        challenges: [
+            "Implemented timezone handling to fix IST timestamp conversion issues where backend stored local time with UTC markers",
+            "Resolved authentication issues with refresh token functionality by correcting cookie settings in test environments",
+            "Optimized Rust screen recording with custom MP4 writer and frame pooling for memory efficiency",
+            "Built file-based sync system transitioning from database to NDJSON files for desktop-to-API data upload"
+        ],
+        timeline: "Jan 2024 - Present",
+        team: "Solo Developer"
+    },
+    {
+        title: "E-Commerce Platform",
+        description: "Modern e-commerce solution with real-time inventory",
+        longDescription: `A scalable e-commerce platform featuring real-time inventory management, payment integration, and advanced search capabilities.
+
+Implemented with Next.js for optimal performance and SEO, integrated with Stripe for secure payments, and utilizes Redis for caching.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-blue-500 to-cyan-600" />
+        ),
+        icon: <IconRocket className="h-6 w-6 text-blue-500" />,
+        tech: ["Next.js", "TypeScript", "Stripe", "Redis", "MongoDB"],
+        status: "Active Development",
+        github: "https://github.com/yourusername/ecommerce",
+        image: "/images/projects/ecommerce.png",
+        features: [
+            "Real-time inventory tracking",
+            "Stripe payment integration",
+            "Advanced product search and filtering",
+            "Admin dashboard with analytics",
+            "Order management system"
+        ],
+        timeline: "3 months",
+        team: "2 Developers"
+    },
+    {
+        title: "Analytics Dashboard",
+        description: "Real-time data visualization platform",
+        longDescription: `A comprehensive analytics dashboard for visualizing complex datasets with interactive charts and real-time updates.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-green-500 to-emerald-600" />
+        ),
+        icon: <IconDatabase className="h-6 w-6 text-green-500" />,
+        tech: ["React", "D3.js", "WebSocket", "PostgreSQL"],
+        status: "Completed",
+        liveUrl: "https://analytics-demo.com",
+        image: "/images/projects/analytics.png",
+        features: [
+            "Real-time data updates via WebSocket",
+            "Interactive charts with D3.js",
+            "Custom date range filtering",
+            "Export to CSV/PDF"
+        ],
+        timeline: "2 months"
+    },{
+        title: "TimeSupervisor",
+        description: "Comprehensive time tracking system with desktop and web components",
+        longDescription: `A full-stack time tracking application designed for enterprises to monitor employee productivity and manage schedules effectively.
+
+Built with modern technologies including React, Node.js, and Rust-based desktop application. Features real-time activity monitoring, screenshot capture, and detailed analytics dashboards.
+
+The system handles complex role-based access control, timezone management, and provides comprehensive audit logging for compliance purposes.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-indigo-500 to-purple-600" />
+        ),
+        icon: <IconCode className="h-6 w-6 text-indigo-500" />,
+        tech: ["React", "Node.js", "Prisma", "PostgreSQL", "Rust", "Tauri", "AWS ECS"],
+        status: "In Production",
+        github: "https://github.com/yourusername/timesupervisor",
+        liveUrl: "https://timesupervisor.com",
+        image: "/images/projects/timesupervisor.png",
+        features: [
+            "Real-time employee activity tracking with screenshot capture",
+            "Schedule management with drag-and-drop interface",
+            "Role-based access control for multi-level organizations",
+            "Cross-platform desktop app (Windows, Mac, Linux)",
+            "Advanced analytics and reporting dashboards",
+            "Timezone-aware data handling",
+            "Comprehensive audit logging for compliance"
+        ],
+        challenges: [
+            "Implemented timezone handling to fix IST timestamp conversion issues where backend stored local time with UTC markers",
+            "Resolved authentication issues with refresh token functionality by correcting cookie settings in test environments",
+            "Optimized Rust screen recording with custom MP4 writer and frame pooling for memory efficiency",
+            "Built file-based sync system transitioning from database to NDJSON files for desktop-to-API data upload"
+        ],
+        timeline: "Jan 2024 - Present",
+        team: "Solo Developer"
+    },
+    {
+        title: "E-Commerce Platform",
+        description: "Modern e-commerce solution with real-time inventory",
+        longDescription: `A scalable e-commerce platform featuring real-time inventory management, payment integration, and advanced search capabilities.
+
+Implemented with Next.js for optimal performance and SEO, integrated with Stripe for secure payments, and utilizes Redis for caching.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-blue-500 to-cyan-600" />
+        ),
+        icon: <IconRocket className="h-6 w-6 text-blue-500" />,
+        tech: ["Next.js", "TypeScript", "Stripe", "Redis", "MongoDB"],
+        status: "Active Development",
+        github: "https://github.com/yourusername/ecommerce",
+        image: "/images/projects/ecommerce.png",
+        features: [
+            "Real-time inventory tracking",
+            "Stripe payment integration",
+            "Advanced product search and filtering",
+            "Admin dashboard with analytics",
+            "Order management system"
+        ],
+        timeline: "3 months",
+        team: "2 Developers"
+    },
+    {
+        title: "Analytics Dashboard",
+        description: "Real-time data visualization platform",
+        longDescription: `A comprehensive analytics dashboard for visualizing complex datasets with interactive charts and real-time updates.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-green-500 to-emerald-600" />
+        ),
+        icon: <IconDatabase className="h-6 w-6 text-green-500" />,
+        tech: ["React", "D3.js", "WebSocket", "PostgreSQL"],
+        status: "Completed",
+        liveUrl: "https://analytics-demo.com",
+        image: "/images/projects/analytics.png",
+        features: [
+            "Real-time data updates via WebSocket",
+            "Interactive charts with D3.js",
+            "Custom date range filtering",
+            "Export to CSV/PDF"
+        ],
+        timeline: "2 months"
+    }
 ];

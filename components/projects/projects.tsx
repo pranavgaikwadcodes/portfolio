@@ -1,10 +1,12 @@
 "use client";
 
-import { ProjectsItems } from "@/utils/projects-items";
+import { ProjectItem, ProjectsItems } from "@/utils/projects-items";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import Link from "next/link";
 import { IconArrowRight, IconFolder, IconCode, IconRocket, IconStar } from "@tabler/icons-react";
 import { motion } from "motion/react";
+import { useState } from "react";
+import ProjectDetailsModal from "../ui/project-details-modal";
 
 export default function ProjectsSection() {
     return (
@@ -31,6 +33,14 @@ const ProjectsBentoGrid = () => {
     // Only show first 3 projects
     const featuredProjects = ProjectsItems.slice(0, 3);
 
+    const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleProjectClick = (project: ProjectItem) => {
+        setSelectedProject(project);
+        setIsModalOpen(true);
+    };
+
     return (
         <BentoGrid className="max-w-7xl mx-auto">
             {featuredProjects.map((item, i) => (
@@ -45,11 +55,19 @@ const ProjectsBentoGrid = () => {
                     github={item.github}
                     liveUrl={item.liveUrl}
                     className={i === 0 ? "md:col-span-2" : ""}
+                    onClick={() => handleProjectClick(item)}
                 />
             ))}
 
             {/* View All Projects Card */}
             <ViewAllProjectsCard />
+
+            {/* Project Details Modal */}
+            <ProjectDetailsModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                project={selectedProject}
+            />
         </BentoGrid>
     );
 }
