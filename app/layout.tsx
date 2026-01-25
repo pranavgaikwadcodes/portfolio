@@ -36,7 +36,7 @@ export default function RootLayout({
       >
         {children}
 
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <div className="fixed bottom-6 right-6 md:left-1/2 md:right-auto md:-translate-x-1/2 z-50">
           <FloatingDock />
         </div>
       </body>

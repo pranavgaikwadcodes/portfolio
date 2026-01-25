@@ -1,56 +1,39 @@
 import {
   IconBrandGithub,
   IconBrandX,
+  IconBriefcase,
+  IconCode,
   IconExchange,
   IconHome,
+  IconMail,
   IconNewSection,
   IconTerminal2,
 } from "@tabler/icons-react";
 
-
 export const NavigationItems = [
   {
     title: "Home",
-    icon: (
-      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "/",
+    icon: <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+    href: "#",
   },
-
+  {
+    title: "Experience",
+    icon: <IconBriefcase className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+    href: "#timeline",
+  },
   {
     title: "Projects",
-    icon: (
-      <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "/projects",
+    icon: <IconCode className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+    href: "#projects",
   },
   {
-    title: "Components",
-    icon: (
-      <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-  {
-    title: "Changelog",
-    icon: (
-      <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-
-  {
-    title: "Twitter",
-    icon: (
-      <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#",
+    title: "Contact",
+    icon: <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+    href: "#contact",
   },
   {
     title: "GitHub",
-    icon: (
-      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+    icon: <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
     href: "https://github.com/pranavgaikwadcodes",
   },
 ];

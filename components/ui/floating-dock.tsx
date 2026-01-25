@@ -63,8 +63,11 @@ const FloatingDockMobile = ({
               >
                 <a
                   href={item.href}
+                  onClick={() => setOpen(false)}
+                  target={item.href.startsWith('#') || item.href.startsWith('/') ? '_self' : '_blank'}
+                  rel={item.href.startsWith('#') || item.href.startsWith('/') ? undefined : 'noopener noreferrer'}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50/40 dark:bg-neutral-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-neutral-800/50"
                 >
                   <div className="h-4 w-4">{item.icon}</div>
                 </a>
@@ -75,7 +78,7 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50/40 dark:bg-neutral-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-neutral-700/50"
       >
         <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
       </button>
@@ -96,7 +99,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-neutral-900",
+        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50/40 dark:bg-neutral-900/80 backdrop-blur-sm px-4 pb-3 md:flex border border-gray-200/50 dark:border-neutral-800/50",
         className,
       )}
     >
@@ -160,14 +163,21 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
 
+  // Determine if link should open in new tab
+  const isExternal = !href.startsWith('#') && !href.startsWith('/');
+
   return (
-    <a href={href}>
+    <a 
+      href={href}
+      target={isExternal ? '_blank' : '_self'}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+    >
       <motion.div
         ref={ref}
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200/80 dark:bg-neutral-800/80 backdrop-blur-sm"
       >
         <AnimatePresence>
           {hovered && (
@@ -175,7 +185,7 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              className="absolute -top-8 left-1/2 w-fit rounded-md border border-gray-200/50 bg-gray-100/90 dark:bg-neutral-800/90 backdrop-blur-sm px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-700/50 dark:text-white"
             >
               {title}
             </motion.div>

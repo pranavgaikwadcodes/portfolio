@@ -6,7 +6,7 @@ import { Timeline } from "../ui/timeline";
 export default function TimelineSection() {
 
     return (
-        <div className="relative w-full overflow-clip">
+        <div id="timeline" className="relative w-full overflow-clip">
             {/* Section Header */}
             <div className="max-w-7xl mx-auto px-4 md:px-10 pt-20 pb-10">
                 <div className="space-y-4">
