@@ -62,7 +62,7 @@ export const timelineData = [
                     </h5>
                     <div className="flex flex-wrap gap-2">
                         {["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Node.js", "Express.js", "Prisma",
-                            "PostgreSQL", "TimescaleDB", "Rust", "Tauri", "Shell Scripts", "Razorpay API", "Axios", "ZOD", "Docker", "Github Actions CI/CD", "GCP", "Postman", "Swagger-docs", "DB-Diagram", "Table Plus"].map((tech) => (
+                            "PostgreSQL", "TimescaleDB", "Rust", "Tauri", "Shell Scripts", "Razorpay API", "Axios", "ZOD", "Docker", "Github Actions CI/CD", "GCP", "Postman", "Swagger-docs", "DB-Diagram"].map((tech) => (
                                 <span
                                     key={tech}
                                     className="px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-md text-xs font-geist-mono hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-900/20 dark:hover:text-indigo-400 transition-colors cursor-default border border-neutral-200 dark:border-neutral-700"
@@ -155,7 +155,7 @@ export const timelineData = [
                     </h5>
                     <div className="flex flex-wrap gap-2">
                         {["React", "Node.js", "MongoDB", "Express", "Flutter", "Firebase",
-                            "PHP", "MySQL", "Razorpay", "REST APIs"].map((tech) => (
+                            "PHP", "MySQL", "Razorpay", "REST APIs", "Postman", "Docker", "Figma"].map((tech) => (
                                 <span
                                     key={tech}
                                     className="px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-md text-xs font-geist-mono hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-900/20 dark:hover:text-indigo-400 transition-colors cursor-default border border-neutral-200 dark:border-neutral-700"
