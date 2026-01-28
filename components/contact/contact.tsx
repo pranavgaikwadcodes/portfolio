@@ -59,14 +59,8 @@ export default function ContactSection() {
         {
             name: "LinkedIn",
             icon: <IconBrandLinkedin className="w-6 h-6" />,
-            href: "https://linkedin.com/in/yourusername",
+            href: "https://linkedin.com/in/pranav-gaikwad-a19088223",
             color: "hover:bg-blue-600"
-        },
-        {
-            name: "Twitter",
-            icon: <IconBrandTwitter className="w-6 h-6" />,
-            href: "https://twitter.com/yourusername",
-            color: "hover:bg-sky-500"
         }
     ];
 

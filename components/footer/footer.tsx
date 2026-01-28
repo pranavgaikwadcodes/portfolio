@@ -25,22 +25,17 @@ export default function Footer() {
             {
                 name: "GitHub",
                 icon: <IconBrandGithub className="w-5 h-5" />,
-                href: "https://github.com/yourusername"
+                href: "https://github.com/pranavgaikwadcodes"
             },
             {
                 name: "LinkedIn",
                 icon: <IconBrandLinkedin className="w-5 h-5" />,
-                href: "https://linkedin.com/in/yourusername"
-            },
-            {
-                name: "Twitter",
-                icon: <IconBrandTwitter className="w-5 h-5" />,
-                href: "https://twitter.com/yourusername"
+                href: "https://linkedin.com/in/pranav-gaikwad-a19088223"
             },
             {
                 name: "Email",
                 icon: <IconMail className="w-5 h-5" />,
-                href: "mailto:pranav@example.com"
+                href: "mailto:work.pranavgaikwad@gmail.com"
             }
         ]
     };
