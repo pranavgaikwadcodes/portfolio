@@ -89,5 +89,45 @@ The system uses function calling to execute CRUD operations, maintains conversat
         ],
         timeline: "Jan 2025",
         team: "Solo Developer"
+    },
+    {
+        title: "Central Assessment Program",
+        description: "Comprehensive educational assessment management system",
+        longDescription: `A transformative platform designed to streamline the educational assessment process from paper assignment to evaluation and payment processing.
+
+Built with the MERN stack, CAP simplifies exam paper-checking workflows for educational institutions by providing secure examiner registration, automated paper allocation, quality control through moderation systems, and integrated payment processing.
+
+The platform ensures data security through robust encryption and digital signatures, while real-time updates via WebSocket provide complete transparency in the evaluation process. Designed for scalability and accessibility, CAP handles the evolving needs of educational institutions with enterprise-grade reliability.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-teal-500 to-cyan-600" />
+        ),
+        icon: <IconDatabase className="h-6 w-6 text-teal-500" />,
+        tech: ["React.js", "Tailwind", "Node.js", "Express.js", "MongoDB", "JWT", "Figma"],
+        status: "Completed",
+        github: "https://github.com/pranavgaikwadcodes/CentralAssessmentProgram",
+        liveUrl: "https://wondrous-toffee-21aa4a.netlify.app/",
+        image: "/images/projects/cap.png",
+        features: [
+            "User-centric examiner registration and verification system",
+            "Automated paper assignment to qualified educators",
+            "Real-time evaluation progress tracking via WebSocket technology",
+            "Moderation system for quality control and standardization",
+            "Integrated secure payment gateway for examiner compensation",
+            "Digital evaluation workflow reducing human error and time commitment",
+            "Robust encryption and digital signatures for data security",
+            "JWT-based authentication and authorization",
+            "Load balancing for optimal performance across multiple servers",
+            "Comprehensive accessibility standards for inclusive usage"
+        ],
+        challenges: [
+            "Implemented WebSocket technology for real-time updates ensuring transparency in evaluation status",
+            "Designed secure digital signature system to protect evaluation integrity and prevent tampering",
+            "Built scalable paper assignment algorithm to match examiners with appropriate papers based on qualifications",
+            "Integrated payment gateway with proper security measures for financial transactions",
+            "Created load balancing architecture to distribute traffic efficiently across servers",
+            "Ensured compliance with legal and ethical standards for educational data handling"
+        ],
+        timeline: "Research Project",
+        team: "Academic Team"
     }
 ];
