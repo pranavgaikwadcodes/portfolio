@@ -205,5 +205,42 @@ The application features collision detection using polygon testing algorithms, d
         ],
         timeline: "Dec 2023",
         team: "Solo Developer"
+    },
+    {
+        title: "CodePen Clone",
+        description: "Browser-based code editor with live preview functionality",
+        longDescription: `A lightweight web-based code playground that replicates core CodePen functionality, allowing users to write HTML, CSS, and JavaScript with instant live preview in the browser.
+
+Built with React and CodeMirror, this clone provides a split-pane interface where developers can experiment with code and see results immediately. The application uses localStorage for persistence, enabling users to save their work locally without requiring authentication.
+
+Perfect for quick prototyping, learning web development, or testing code snippets, this project demonstrates the fundamentals of building an interactive development environment in the browser.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-slate-700 to-gray-900" />
+        ),
+        icon: <IconCode className="h-6 w-6 text-slate-500" />,
+        tech: ["React", "CodeMirror", "JavaScript", "HTML5", "CSS3", "LocalStorage"],
+        status: "Completed",
+        github: "https://github.com/pranavgaikwadcodes/codepen-clone",
+        liveUrl: "https://pranavgaikwadcodes.github.io/codepen-clone/",
+        image: "/images/projects/codepen-clone.png",
+        features: [
+            "Real-time code editing with syntax highlighting via CodeMirror",
+            "Live preview iframe that updates instantly as you type",
+            "Support for HTML, CSS, and JavaScript editing in separate panes",
+            "LocalStorage persistence for saving code across browser sessions",
+            "Split-pane editor layout with resizable sections",
+            "Clean, minimalist interface inspired by CodePen",
+            "No authentication required for immediate code experimentation",
+            "FontAwesome icons for intuitive UI controls"
+        ],
+        challenges: [
+            "Implemented debounced live preview updates to prevent performance issues during rapid typing",
+            "Built secure iframe sandboxing to safely execute user-written JavaScript code",
+            "Created seamless code injection system combining HTML, CSS, and JS into single preview document",
+            "Designed localStorage persistence layer to handle code saving and retrieval across sessions",
+            "Configured CodeMirror with appropriate syntax highlighting modes for web languages"
+        ],
+        timeline: "Jan 2022",
+        team: "Solo Developer"
     }
 ];
