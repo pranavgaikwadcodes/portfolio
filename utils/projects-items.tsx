@@ -53,5 +53,41 @@ The app features cloud synchronization via Supabase, PDF export capabilities, an
         ],
         timeline: "Nov 2024 - Jan 2025",
         team: "Solo Developer"
+    },
+    {
+        title: "AI-Agent-ToDo-App",
+        description: "CLI-based AI agent with natural language database interactions",
+        longDescription: `An intelligent command-line todo application where users interact with their database using natural language through an AI agent.
+
+Built with local LLM integration via Ollama, the agent understands user intent and automatically translates natural language commands into database operations. Users can manage todos conversationally without writing any SQL or remembering specific commands.
+
+The system uses function calling to execute CRUD operations, maintains conversation context, and provides a seamless chat-like interface for database management. All processing happens locally with the qwen2.5:3b model running through Ollama.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-amber-500 to-orange-600" />
+        ),
+        icon: <IconCode className="h-6 w-6 text-amber-500" />,
+        tech: ["JavaScript", "Node.js", "Drizzle ORM", "PostgreSQL", "Docker", "OpenAI SDK", "Ollama"],
+        status: "Completed",
+        github: "https://github.com/pranavgaikwadcodes/AI-Agent-ToDo-App",
+        image: "/images/projects/ai-agent-todo.png",
+        features: [
+            "Natural language command processing with local LLM (qwen2.5:3b via Ollama)",
+            "Function calling architecture for automated tool selection and execution",
+            "Complete CRUD operations through conversational interface",
+            "Intelligent search with fuzzy matching using SQL ILIKE queries",
+            "Contextual conversation memory across multiple interactions",
+            "JSON-structured responses ensuring reliable parsing and execution",
+            "Bulk operations support (mark all completed, delete all)",
+            "Multi-parameter function handling for complex updates"
+        ],
+        challenges: [
+            "Designed robust JSON response format to handle both conversational responses and function calls",
+            "Implemented conversation context management to maintain state across user interactions",
+            "Built flexible parameter parsing system to handle single and multi-parameter functions from string inputs",
+            "Created error handling flow that feeds function errors back to AI for user-friendly explanations",
+            "Integrated OpenAI SDK with local Ollama server for completely offline AI processing"
+        ],
+        timeline: "Jan 2025",
+        team: "Solo Developer"
     }
 ];
