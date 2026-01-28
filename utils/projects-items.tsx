@@ -168,5 +168,42 @@ The application streamlines the EV charging experience by providing live station
         ],
         timeline: "Sep 2023 - Nov 2023",
         team: "Solo Developer"
+    },
+    {
+        title: "Hand Gesture Snake Game",
+        description: "Classic snake game controlled by hand gestures using computer vision",
+        longDescription: `An innovative take on the classic snake game where players control the snake using hand gestures detected through a webcam, eliminating the need for keyboard or mouse input.
+
+Built with Python and OpenCV, the game uses MediaPipe-based hand tracking to detect the player's index finger position in real-time. The snake follows the finger movements, creating an immersive and interactive gaming experience.
+
+The application features collision detection using polygon testing algorithms, dynamic snake growth mechanics, and real-time scoring. It demonstrates practical applications of computer vision and gesture recognition in interactive entertainment.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-violet-500 to-purple-600" />
+        ),
+        icon: <IconCode className="h-6 w-6 text-violet-500" />,
+        tech: ["Python", "OpenCV", "CVZone", "MediaPipe", "NumPy"],
+        status: "Completed",
+        github: "https://github.com/pranavgaikwadcodes/PythonSnakeGame",
+        image: "/images/projects/snake-game.png",
+        features: [
+            "Hand gesture recognition using MediaPipe hand tracking module",
+            "Real-time index finger position detection for snake control",
+            "Dynamic snake growth system with configurable length constraints",
+            "Collision detection using point-polygon testing algorithm",
+            "Score tracking system with visual feedback",
+            "Random food generation with boundary constraints",
+            "Game over detection and restart functionality",
+            "Smooth snake movement with distance-based point tracking",
+            "Visual overlay of food items and score display"
+        ],
+        challenges: [
+            "Implemented accurate collision detection using cv2.pointPolygonTest for self-intersection checks",
+            "Designed smooth snake movement by calculating distances between consecutive points using Euclidean distance",
+            "Built dynamic length management system that removes tail segments when exceeding allowed length",
+            "Optimized hand detection with high confidence threshold (0.8) for stable gesture recognition",
+            "Created responsive game reset mechanism allowing players to restart without relaunching the application"
+        ],
+        timeline: "Dec 2023",
+        team: "Solo Developer"
     }
 ];
