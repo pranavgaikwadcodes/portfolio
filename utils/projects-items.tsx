@@ -129,5 +129,44 @@ The platform ensures data security through robust encryption and digital signatu
         ],
         timeline: "Research Project",
         team: "Academic Team"
+    },
+    {
+        title: "EV Charging Station Locator",
+        description: "Cross-platform app for finding and booking EV charging stations",
+        longDescription: `A comprehensive mobile application designed to help electric vehicle owners locate nearby charging stations, check real-time availability, and pre-book charging slots with integrated payment processing.
+
+Built with Flutter for seamless cross-platform compatibility on both Android and iOS, the app leverages Google Maps integration for location services and Firebase for real-time data synchronization and user authentication.
+
+The application streamlines the EV charging experience by providing live station status updates, advance slot booking capabilities, and secure payment processing through Razorpay, making electric vehicle charging more convenient and predictable for users.`,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[10rem] bg-gradient-to-br from-emerald-500 to-green-600" />
+        ),
+        icon: <IconRocket className="h-6 w-6 text-emerald-500" />,
+        tech: ["Flutter", "Dart", "Firebase", "Google Maps API", "Razorpay", "Cloud Firestore", "GetX"],
+        status: "Completed",
+        github: "https://github.com/pranavgaikwadcodes/ev_charging_station",
+        image: "/images/projects/ev-charging.png",
+        features: [
+            "Real-time charging station locator with Google Maps integration",
+            "Live availability and status updates for nearby charging stations",
+            "Advance slot pre-booking system to reserve charging times",
+            "Integrated Razorpay payment gateway for seamless transactions",
+            "Firebase Authentication for secure user sign-up and sign-in",
+            "Cloud Firestore for real-time data synchronization across devices",
+            "User rating and review system for charging stations",
+            "Geolocation services for automatic nearby station detection",
+            "Intuitive onboarding experience with smooth page transitions",
+            "GetX state management for efficient app performance"
+        ],
+        challenges: [
+            "Implemented real-time station availability tracking using Cloud Firestore listeners",
+            "Integrated Google Maps with custom markers for charging station visualization",
+            "Built slot booking system with conflict prevention to avoid double bookings",
+            "Integrated Razorpay payment gateway with proper error handling and transaction verification",
+            "Designed offline-first architecture using GetStorage for persistent local data",
+            "Optimized geolocation queries to efficiently find nearest stations based on user location"
+        ],
+        timeline: "Sep 2023 - Nov 2023",
+        team: "Solo Developer"
     }
 ];
