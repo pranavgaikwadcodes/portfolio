@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-    IconMail, 
-    IconBrandGithub, 
-    IconBrandLinkedin, 
+import {
+    IconMail,
+    IconBrandGithub,
+    IconBrandLinkedin,
     IconBrandTwitter,
     IconMapPin,
     IconSend,
@@ -23,8 +23,32 @@ export default function ContactSection() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Add your form submission logic here
-        setTimeout(() => setIsSubmitting(false), 2000);
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: '896ba458-8cf6-4a73-856d-272767f90fa7', // Get from web3forms.com
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                }),
+            });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                alert('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            alert('Error sending message. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const contactInfo = [
@@ -69,7 +93,7 @@ export default function ContactSection() {
             <div className="max-w-7xl mx-auto px-4 md:px-10">
                 {/* Section Header */}
                 <div className="space-y-4 mb-16 text-center">
-                    <motion.h2 
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -77,7 +101,7 @@ export default function ContactSection() {
                     >
                         Let's <span className="text-indigo-500">Connect</span>
                     </motion.h2>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -90,7 +114,7 @@ export default function ContactSection() {
 
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
                     {/* Contact Info Cards */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
