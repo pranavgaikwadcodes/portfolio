@@ -28,6 +28,7 @@ export const BentoGridItem = ({
   title,
   description,
   header,
+  image,
   icon,
   tech,
   status,
@@ -41,6 +42,7 @@ export const BentoGridItem = ({
   header?: React.ReactNode;
   icon?: React.ReactNode;
   tech?: string[];
+  image?: string;
   status?: string;
   github?: string;
   liveUrl?: string;
@@ -56,7 +58,15 @@ export const BentoGridItem = ({
     >
       {/* Header/Image */}
       <div className="relative overflow-hidden">
-        {header}
+        {image ? (
+          <img
+            src={image}
+            alt={typeof title === "string" ? title : "Project image"}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          header
+        )}
         {/* Status Badge */}
         {status && (
           <div className="absolute top-3 right-3">

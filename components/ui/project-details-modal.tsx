@@ -9,7 +9,7 @@ interface ProjectDetails {
     title: string;
     description: string;
     longDescription: string;
-    image: string;
+    image?: string;
     tech: string[];
     status?: string;
     github?: string;

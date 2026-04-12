@@ -10,7 +10,7 @@ export interface ProjectItem {
     status?: string;
     github?: string;
     liveUrl?: string;
-    image: string;
+    image?: string;
     features?: string[];
     challenges?: string[];
     timeline?: string;
@@ -33,7 +33,7 @@ The app features cloud synchronization via Supabase, PDF export capabilities, an
         tech: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL", "Zustand", "Zod"],
         status: "Completed",
         github: "https://github.com/pranavgaikwadcodes/DataNest",
-        image: "/images/projects/datanest.png",
+        image: "/images/projects/DN Feature graphic.jpg",
         features: [
             "Custom collections with dynamic JSONB field structures",
             "Personalization with colors and emoji icons for each collection",
@@ -69,7 +69,7 @@ The system uses function calling to execute CRUD operations, maintains conversat
         tech: ["JavaScript", "Node.js", "Drizzle ORM", "PostgreSQL", "Docker", "OpenAI SDK", "Ollama"],
         status: "Completed",
         github: "https://github.com/pranavgaikwadcodes/AI-Agent-ToDo-App",
-        image: "/images/projects/ai-agent-todo.png",
+        // image: "/images/projects/ai-agent-todo.png",
         features: [
             "Natural language command processing with local LLM (qwen2.5:3b via Ollama)",
             "Function calling architecture for automated tool selection and execution",
@@ -106,7 +106,7 @@ The platform ensures data security through robust encryption and digital signatu
         status: "Completed",
         github: "https://github.com/pranavgaikwadcodes/CentralAssessmentProgram",
         liveUrl: "https://wondrous-toffee-21aa4a.netlify.app/",
-        image: "/images/projects/cap.png",
+        // image: "/images/projects/cap.png",
         features: [
             "User-centric examiner registration and verification system",
             "Automated paper assignment to qualified educators",
@@ -145,7 +145,7 @@ The application streamlines the EV charging experience by providing live station
         tech: ["Flutter", "Dart", "Firebase", "Google Maps API", "Razorpay", "Cloud Firestore", "GetX"],
         status: "Completed",
         github: "https://github.com/pranavgaikwadcodes/ev_charging_station",
-        image: "/images/projects/ev-charging.png",
+        // image: "/images/projects/ev-charging.png",
         features: [
             "Real-time charging station locator with Google Maps integration",
             "Live availability and status updates for nearby charging stations",
@@ -184,7 +184,7 @@ The application features collision detection using polygon testing algorithms, d
         tech: ["Python", "OpenCV", "CVZone", "MediaPipe", "NumPy"],
         status: "Completed",
         github: "https://github.com/pranavgaikwadcodes/PythonSnakeGame",
-        image: "/images/projects/snake-game.png",
+        // image: "/images/projects/snake-game.png",
         features: [
             "Hand gesture recognition using MediaPipe hand tracking module",
             "Real-time index finger position detection for snake control",
@@ -222,7 +222,7 @@ Perfect for quick prototyping, learning web development, or testing code snippet
         status: "Completed",
         github: "https://github.com/pranavgaikwadcodes/codepen-clone",
         liveUrl: "https://pranavgaikwadcodes.github.io/codepen-clone/",
-        image: "/images/projects/codepen-clone.png",
+        // image: "/images/projects/codepen-clone.png",
         features: [
             "Real-time code editing with syntax highlighting via CodeMirror",
             "Live preview iframe that updates instantly as you type",

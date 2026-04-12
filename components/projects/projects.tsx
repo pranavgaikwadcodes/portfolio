@@ -49,6 +49,7 @@ const ProjectsBentoGrid = () => {
                     title={item.title}
                     description={item.description}
                     header={item.header}
+                    image={item.image}
                     icon={item.icon}
                     tech={item.tech}
                     status={item.status}
